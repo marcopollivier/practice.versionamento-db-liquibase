@@ -1,0 +1,26 @@
+project.name: versionamento-db-liquibase
+
+spring:
+  application:
+    name: ${project.name}
+
+  h2.console:
+    enabled: true
+    path: /h2
+
+  datasource:
+    url: jdbc:h2:mem:responsive-br-versionamento-db-liquibase
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    initialize: true
+
+  jpa:
+    show-sql: true
+    properties.hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.H2Dialect
+
